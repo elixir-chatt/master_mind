@@ -41,8 +41,6 @@ defmodule MasterMind.Core.Game do
   def win?(%{ red: 4 }), do: true
   def win?(_), do: false
   
-  
-  
   def score_reds(answer, guess) do
     answer
     |> Enum.zip(guess)
