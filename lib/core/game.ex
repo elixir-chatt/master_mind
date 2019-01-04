@@ -18,8 +18,8 @@ defmodule MasterMind.Core.Game do
   
   def score(answer, guess) do
     %{
-      reds: score_reds(answer, guess), 
-      whites: score_whites(answer, guess)
+      red: score_reds(answer, guess), 
+      white: score_whites(answer, guess)
     }
   end
   
@@ -31,7 +31,8 @@ defmodule MasterMind.Core.Game do
   def game_won?(game) do
     game
     |> scores
-    |> Enum.any?( &win?/1 )
+    |> hd
+    |> win?
   end
   
   def game_lost?(game) do
