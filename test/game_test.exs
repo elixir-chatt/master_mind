@@ -22,11 +22,11 @@ defmodule GameTest do
   end
   
   test "should score game" do
-    assert Game.game_won?(winning_game)  
+    assert Game.game_won?(winning_game())  
   end
   
   test "i tried" do
-    assert Game.game_lost?(losing_game)  
+    assert Game.game_lost?(losing_game())  
   end
   
   

@@ -8,6 +8,18 @@ defmodule MasterMind.Core.Game do
     }
   end
   
+  def board(game) do
+      game.guesses
+      |> Enum.map( fn(guess) -> row(guess, game) end)
+  end
+  
+  def row(guess, game) do
+    %{
+      guess: guess, 
+      score: score(game.answer, guess)
+    }
+  end
+  
   def random_answer(nil) do
     (1..4)
     |> Enum.map( fn(_) -> :rand.uniform(6) end)
