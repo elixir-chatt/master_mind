@@ -10,10 +10,10 @@ defmodule MasterMind.Core.Game do
   
   def board(game) do
       game.guesses
-      |> Enum.map( fn(guess) -> row(guess, game) end)
+      |> Enum.map( fn(guess) -> row(game, guess) end)
   end
   
-  def row(guess, game) do
+  def row(game, guess) do
     %{
       guess: guess, 
       score: score(game.answer, guess)
